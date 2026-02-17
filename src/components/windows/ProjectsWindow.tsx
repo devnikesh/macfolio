@@ -13,9 +13,9 @@ const projects = [
   },
   {
     id: 2,
-    name: "Task Manager API",
-    description: "RESTful API for task management with Node.js, Express, and MongoDB",
-    tags: ["Node.js", "MongoDB", "Express"],
+    name: "IELTS Battleground Arena",
+    description: "IELTS Battle Arena is a full-stack competitive learning platform that gamifies IELTS exam preparation. Users can practise across five core skill categories — Vocabulary, Grammar, Reading, Writing, and Listening — through timed challenges and structured practice sessions, or go head-to-head against other players in real-time battles powered by WebSockets.",
+    tags: ["React", "TypeScript", "TanStack Query", "Zod", "Node.js", "Express", "WebSockets", "MongoDB", "Mongoose", "TailwindCSS", "Framer Motion"],
     stars: 8,
     link: "#",
     github: "#",

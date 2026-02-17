@@ -20,12 +20,12 @@ const windowConfigs = {
   about: {
     title: "About Me",
     defaultPosition: { x: 120, y: 100 },
-    defaultSize: { width: 550, height: 500 },
+    defaultSize: { width: 650, height: 600 },
   },
   projects: {
     title: "Projects",
     defaultPosition: { x: 200, y: 120 },
-    defaultSize: { width: 650, height: 480 },
+    defaultSize: { width: 750, height: 680 },
   },
   contact: {
     title: "Contact",
