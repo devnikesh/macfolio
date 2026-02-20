@@ -54,27 +54,25 @@ const Index = () => {
   ]);
   const [maxZIndex, setMaxZIndex] = useState(1);
 
-  const openWindow = useCallback((id: string) => {
-    setMaxZIndex((prev) => prev + 1);
-    setWindows((prev) =>
-      prev.map((w) =>
-        w.id === id ? { ...w, isOpen: true, zIndex: maxZIndex + 1 } : w
-      )
-    );
-  }, [maxZIndex]);
+  const openWindow = useCallback(
+    (id: string) => {
+      setMaxZIndex((prev) => prev + 1);
+      setWindows((prev) => prev.map((w) => (w.id === id ? { ...w, isOpen: true, zIndex: maxZIndex + 1 } : w)));
+    },
+    [maxZIndex],
+  );
 
   const closeWindow = useCallback((id: string) => {
-    setWindows((prev) =>
-      prev.map((w) => (w.id === id ? { ...w, isOpen: false } : w))
-    );
+    setWindows((prev) => prev.map((w) => (w.id === id ? { ...w, isOpen: false } : w)));
   }, []);
 
-  const focusWindow = useCallback((id: string) => {
-    setMaxZIndex((prev) => prev + 1);
-    setWindows((prev) =>
-      prev.map((w) => (w.id === id ? { ...w, zIndex: maxZIndex + 1 } : w))
-    );
-  }, [maxZIndex]);
+  const focusWindow = useCallback(
+    (id: string) => {
+      setMaxZIndex((prev) => prev + 1);
+      setWindows((prev) => prev.map((w) => (w.id === id ? { ...w, zIndex: maxZIndex + 1 } : w)));
+    },
+    [maxZIndex],
+  );
 
   const openWindows = windows.filter((w) => w.isOpen).map((w) => w.id);
 
@@ -101,16 +99,8 @@ const Index = () => {
 
       {/* Desktop Icons */}
       <div className="absolute top-10 right-4 flex flex-col gap-2 pt-4">
-        <DesktopIcon
-          icon={<FileText className="w-8 h-8 text-muted-foreground" />}
-          label="Resume.pdf"
-          onClick={() => openWindow("about")}
-        />
-        <DesktopIcon
-          icon={<FolderOpen className="w-8 h-8 text-blue-400" />}
-          label="Projects"
-          onClick={() => openWindow("projects")}
-        />
+        <DesktopIcon icon={<FileText className="w-8 h-8 text-muted-foreground" />} label="Resume.pdf" onClick={() => openWindow("about")} />
+        <DesktopIcon icon={<FolderOpen className="w-8 h-8 text-blue-400" />} label="Projects" onClick={() => openWindow("projects")} />
       </div>
 
       {/* Windows */}
